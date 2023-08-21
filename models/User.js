@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const usersSchema = new Schema({
-    fullName: {
+const userSchema = new Schema({
+    name: {
         type: String,
         trim: true
     },
@@ -11,11 +11,11 @@ const usersSchema = new Schema({
         lowercase: true,
         trim: true
     },
-    telefono: {
+    phone: {
         type: String,
         trim: true
     },
     suscribed: [],
     channels: []
 });
-module.exports = mongoose.model('Users', usersSchema); 
+module.exports = mongoose.model('User', userSchema); 
