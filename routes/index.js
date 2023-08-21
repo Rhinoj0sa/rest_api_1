@@ -69,36 +69,17 @@
 
 // Path: routes/index.js
 const express = require('express');
-const router = express.Router(); 
+const router = express.Router();
 // const mongoose = require('mongoose');
 // mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost/restapis', {
 //     useNewUrlParser: true,
 // });
 const clientesController = require('../controllers/clientesController.js');
+const messageController = require('../controllers/messageController.js');
 
 module.exports = function () {
     router.post('/clientes', clientesController.nuevoCliente)
-
-    router.get('/messages', (req, res) => {
-        const query = req.query;
-        for (let q in query) {
-            console.log(q);
-            console.log(query[q].toUpperCase() + ' ' + query[q].toLowerCase());
-        }
-        res.send({ query: req.query })
-    });
-    router.post('/messages', (req, res) => {
-        console.log(req.query);
-        const body = req.body;
-        console.log(req.body);
-        let newBody = {};
-        for (let q in body) {
-            newBody[q] = body[q].toUpperCase();
-            console.log(body[q].toUpperCase() + ' ' + query[q].toLowerCase());
-        }
-        console.log(newBody);
-        res.send({ body: newBody })
-    });
+    router.post('/messages', messageController.newMessage);
     return router;
 }

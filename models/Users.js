@@ -18,4 +18,4 @@ const usersSchema = new Schema({
     suscribed: [],
     channels: []
 });
-module.exports = mongoose.model('Users', clientesSchema); 
+module.exports = mongoose.model('Users', usersSchema); 
