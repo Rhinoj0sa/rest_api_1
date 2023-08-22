@@ -1,0 +1,9 @@
+
+POST http://localhost:3000/messages
+Content-Type: application/json
+    
+    {
+        "text": "enpoint puts data in the database",
+        "category": "Finance"
+    }
+
