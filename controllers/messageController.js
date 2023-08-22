@@ -1,19 +1,41 @@
 const Message = require('../models/Message');
+const User = require('../models/User');
+const Notification = require('../models/Notification');
 
 exports.newMessage = async (req, res) => {
         const msg = new Message(req.body);
-        console.log(`the req body is ${req.body}`);
-        if (req.body) {
-            try {
-                await msg.save();
-                res.json({ text: 'Se agrego un nuevo mensaje', msg });
-            }
-            catch (error) {
-                console.log(error);
-                next();
+
+    if (req.body) {
+        try {
+            await msg.save();
+            // res.json({text: 'Se agrego un nuevo mensaje', msg});
+        } catch (error) {
+            console.log(error);
+
+        }
+        const list_users = await User.find({'suscribed': {'$in': [req.body.category]}})
+        for (let i = 0; i < list_users.length; i++) {
+            console.log(`user ${i} is ${list_users[i]}`)
+            for (let j = 0; j < list_users[i].channels.length; j++) {
+                console.log(` ${i} ${j} ${list_users[i].channels[j]}`)
+                const notification = new Notification({
+                    name: list_users[i].name,
+                    // email: list_users[i].email,
+                    phone: list_users[i].phone,
+                    text: req.body.text,
+                    category: req.body.category,
+                    channel: list_users[i].channels[j]
+                });
+                console.log(`notification.name ${notification}`);
+                try {
+                    await notification.save();
+                } catch (error) {
+                    console.log(error);
+                }
             }
         }
-        else {
-            res.json({ mensaje: 'El objecto es obligatorio' });
-        }
+        res.json({text: 'new message added', msg})
+    } else {
+        res.json({message: 'required data missing'})
+    }
     }
