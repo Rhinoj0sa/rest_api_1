@@ -9,7 +9,7 @@ exports.newMessage = async (req, res) => {
         res.status(400).send('category field is required')
     } else {
         if (req.body.message.length === 0) {
-            res.status(400).send('text field is required')
+            res.status(400).send('message is required')
         } else {
             const msg = new Message(req.body);
             try {
@@ -36,7 +36,7 @@ exports.newMessage = async (req, res) => {
                     }
                 }
             }
-            res.json({text: 'new message added', msg})
+            res.json({message: 'new message added', msg})
         }
     }
 }
