@@ -15,5 +15,5 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes()); 
 app.listen(port, () => console.log(`App listening on port ${process.env.PORT}!`));
-// app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/test', (req, res) => res.send('Test!'));
+app.get('/ping', (req, res) => res.send('pong'));
+

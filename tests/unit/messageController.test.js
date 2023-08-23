@@ -20,10 +20,10 @@ describe('messageController', () => {
         const res = httpMocks.createResponse();
         await messageController.newMessage(req, res);
         expect(res.statusCode).toBe(400);
-        expect(res._getData()).toBe('category is required');
+        expect(res._getData()).toBe('category field is required');
     }
     );
-    test('should return 400 if text is empty', async () => {
+    test('should return 400 if message is empty', async () => {
         const req = httpMocks.createRequest({
             method: 'POST',
             url: '/messages',
