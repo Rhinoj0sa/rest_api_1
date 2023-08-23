@@ -7,7 +7,6 @@ const notificationSchema = new Schema({
     },
     email: {
         type: String,
-        unique: true,
         lowercase: true,
         trim: true
     },
@@ -26,6 +25,10 @@ const notificationSchema = new Schema({
     channel:{
         type: String,
         trim: true
+    },
+    sent: {
+        type: Boolean,
+        default: false
     }
 },{timestamps:true});
 module.exports = mongoose.model('Notification', notificationSchema);
