@@ -6,10 +6,10 @@ const MsgCategories = require('../models/MsgCategories');
 exports.newMessage = async (req, res) => {
     const valid_categories = ['Sports', 'Finance', 'Films'];
     if (valid_categories.indexOf(req.body.category) < 0) {
-        res.status(400).send('category is required')
+        res.status(400).send('category field is required')
     } else {
         if (req.body.text.length === 0) {
-            res.status(400).send('text is required')
+            res.status(400).send('text field is required')
         } else {
             const msg = new Message(req.body);
             try {
