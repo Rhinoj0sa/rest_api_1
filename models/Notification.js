@@ -14,7 +14,7 @@ const notificationSchema = new Schema({
         type: String,
         trim: true
     },
-    text: {
+    message: {
         type: String,
         trim: true
     },

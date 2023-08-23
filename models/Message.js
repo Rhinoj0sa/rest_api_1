@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const messageSchema = new Schema({
-    text: {
+    message: {
         type: String,
         trim: true
     },

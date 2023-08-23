@@ -8,7 +8,7 @@ exports.newMessage = async (req, res) => {
     if (valid_categories.indexOf(req.body.category) < 0) {
         res.status(400).send('category field is required')
     } else {
-        if (req.body.text.length === 0) {
+        if (req.body.message.length === 0) {
             res.status(400).send('text field is required')
         } else {
             const msg = new Message(req.body);
@@ -24,7 +24,7 @@ exports.newMessage = async (req, res) => {
                         name: list_users[i].name,
                         email: list_users[i].email,
                         phone: list_users[i].phone,
-                        text: req.body.text,
+                        message: req.body.message,
                         category: req.body.category,
                         channel: list_users[i].channels[j],
                         sent: false
