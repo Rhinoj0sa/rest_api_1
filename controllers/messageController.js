@@ -8,8 +8,8 @@ exports.newMessage = async (req, res) => {
     if (valid_categories.indexOf(req.body.category) < 0) {
         res.status(400).send('category is required')
     } else {
-        if (req.body.text.length === 0) {
-            res.status(400).send('text is required')
+        if (req.body.message.length === 0) {
+            res.status(400).send('message is required')
         } else {
             const msg = new Message(req.body);
             try {
@@ -24,7 +24,7 @@ exports.newMessage = async (req, res) => {
                         name: list_users[i].name,
                         email: list_users[i].email,
                         phone: list_users[i].phone,
-                        text: req.body.text,
+                        message: req.body.message,
                         category: req.body.category,
                         channel: list_users[i].channels[j],
                         sent: false
@@ -36,7 +36,7 @@ exports.newMessage = async (req, res) => {
                     }
                 }
             }
-            res.json({text: 'new message added', msg})
+            res.json({message: 'new message added', msg})
         }
     }
 }
