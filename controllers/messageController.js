@@ -6,7 +6,6 @@ const MsgCategories = require('../models/MsgCategories');
 exports.newMessage = async (req, res) => {
     const valid_categories = ['Sports', 'Finance', 'Films'];
     if (valid_categories.indexOf(req.body.category) < 0) {
-        console.log(`req.body.category err ${req.body.category} ${valid_categories}`)
         res.status(400).send('category is required')
     } else {
         if (req.body.text.length === 0) {
@@ -19,11 +18,8 @@ exports.newMessage = async (req, res) => {
                 console.log(error);
             }
             const list_users = await User.find({'suscribed': {'$in': [req.body.category]}})
-            // console.log(`list_users ${list_users}`)
             for (let i = 0; i < list_users.length; i++) {
-                // console.log(`user ${i} is ${list_users[i]}`)
                 for (let j = 0; j < list_users[i].channels.length; j++) {
-                    // console.log(` ${i} ${j} ${list_users[i].channels[j]}`)
                     const notification = new Notification({
                         name: list_users[i].name,
                         email: list_users[i].email,
@@ -33,7 +29,6 @@ exports.newMessage = async (req, res) => {
                         channel: list_users[i].channels[j],
                         sent: false
                     });
-                    // console.log(`notification.name ${notification}`);
                     try {
                         await notification.save();
                     } catch (error) {

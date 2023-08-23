@@ -1,3 +1,10 @@
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/test', {
+    useNewUrlParser: true,
+});
+const User = require('./models/User');
+// const new_user = require('./controllers/userController')
 const customer_list = [
     {
         "name": "johnny Canales",
@@ -50,3 +57,19 @@ const customer_list = [
     }
 
 ]
+const seed = async () => {
+    // await User.deleteMany({});
+    for (let i = 0; i < customer_list.length; i++) {
+        const user = new User(customer_list[i]);
+        if (user) {
+            try {
+                await user.save();
+            } catch (error) {
+                console.log(error);
+            }
+            console.log('DB seeded');
+        }
+    }
+}
+seed().then(r => console.log(r)).catch(e => console.log(e));
+
