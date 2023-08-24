@@ -38,18 +38,4 @@ describe('messageController', () => {
         expect(res._getData()).toBe('message is required');
     }
     );
-    // test('should return 200 if category and text are valid', async () => {
-    //     const req = httpMocks.createRequest({
-    //         method: 'POST',
-    //         url: '/messages',
-    //         body: {
-    //             category: 'Sports',
-    //             message: 'test message'
-    //         }
-    //     });
-    //     const res = httpMocks.createResponse();
-    //     await messageController.newMessage(req, res);
-    //     expect(res.statusCode).toBe(200);
-    //     expect(res._getData()).toBe('new message added');
-    // })
 });

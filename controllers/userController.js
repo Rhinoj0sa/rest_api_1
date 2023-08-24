@@ -3,7 +3,6 @@ const User = require('../models/User');
 
 exports.newUser = async (req, res) => {
     const user = new User(req.body);
-    console.log(`the req body is ${req.body}`);
     if (user) {
         try {
             await user.save();
