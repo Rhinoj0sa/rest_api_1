@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost/test', {
 });
 const User = require('./models/User');
 // const new_user = require('./controllers/userController')
-const customer_list = [
+const user_list = [
     {
         "name": "johnny Canales",
         "email": "john@abc.com",

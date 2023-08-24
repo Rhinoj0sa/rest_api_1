@@ -7,5 +7,6 @@ const userController = require('../controllers/userController.js');
 module.exports = function () {
     router.post('/messages', messageController.newMessage);
     router.post('/user', userController.newUser);
+    router.post('/user/seed', userController.seed);
     return router;
 }
