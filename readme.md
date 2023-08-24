@@ -15,3 +15,6 @@ http://localhost:3000/user (POST) this endpoint receives a user and save it in t
 
 http://localhost:3000/user/seed (POST) this endpoint populates the customer table with some demo users.
 
+### The link to the postman collection is:
+https://blue-trinity-259919.postman.co/workspace/New-Team-Workspace~ac437c91-fe65-4499-abb0-aecb441915d0/collection/7248679-1562b8d5-ed3c-49f2-84b3-b73e962545e5?action=share&creator=7248679
+
