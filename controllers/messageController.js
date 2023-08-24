@@ -36,7 +36,7 @@ exports.newMessage = async (req, res) => {
                     }
                 }
             }
-            res.json({message: 'new message added', msg})
+            res.status(201).json({message: 'new message added', msg})
         }
     }
 }

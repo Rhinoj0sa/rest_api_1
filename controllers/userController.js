@@ -6,7 +6,7 @@ exports.newUser = async (req, res) => {
         if (user) {
             try {
                 await user.save();
-                res.json({ text: 'Se agrego un nuevo usuario', user });
+                res.status(201).json({ text: 'Se agrego un nuevo usuario', user });
             }
             catch (error) {
                 console.log(error);
