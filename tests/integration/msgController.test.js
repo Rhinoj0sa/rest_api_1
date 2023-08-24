@@ -11,7 +11,6 @@ describe("POST " + endpointUrl, () => {
                 message: "test message"
             });
         expect(response.statusCode).toBe(400);
-        // expect(response.body.message).toBe("category field is required");
     });
     it("should return 400 on empty message", async () => {
         const response = await request(app)
@@ -21,7 +20,6 @@ describe("POST " + endpointUrl, () => {
                 message: ""
             });
         expect(response.statusCode).toBe(400);
-        // expect(response.body.message).toBe("message is required");
     });
     it("should return 201 on valid category and message", async () => {
         const response = await request(app)
@@ -31,7 +29,6 @@ describe("POST " + endpointUrl, () => {
                 message: "test message"
             });
         expect(response.statusCode).toBe(201);
-        // expect(response.body.message).toBe("new message added");
     });
 }
 );
