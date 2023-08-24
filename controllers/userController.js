@@ -21,13 +21,9 @@ exports.newUser = async (req, res) => {
 
 exports.seed = async (req, res) => {
     const users = await User.find({});
-
-    console.log(`the users in the database: ${users}`)
     if (users.length === 0) {
-        console.log(`the users that come from import are ${user_list}`)
         try {
             await User.insertMany(user_list);
-            console.log('pass the insert many')
         } catch (error) {
             console.log(error);
             res.status(400).json({ text: 'Error adding users', error });
