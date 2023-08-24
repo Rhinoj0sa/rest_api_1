@@ -1,5 +1,4 @@
 const userController = require('../../controllers/userController');
-// const User = require('../../models/User');
 const httpMocks = require('node-mocks-http');
 
 describe('userController', () => {

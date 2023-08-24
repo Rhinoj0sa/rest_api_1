@@ -1,4 +1,4 @@
-# Notification system API using node JS and express.
+# Notification system API using node JS, express and Mongo db.
 
 
 To start the project run the following command after cloning the repository:
