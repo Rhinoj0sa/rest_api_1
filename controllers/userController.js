@@ -1,5 +1,14 @@
 const User = require('../models/User');
 
+exports.getUsers = async (req, res) => {
+    const users = await User.find({});
+    if (users.length === 0) {
+        res.status(404).json({ text: 'No users found' });
+    }
+    else {
+        res.status(200).json({ text: 'Users found', users });
+    }
+}
 
 exports.newUser = async (req, res) => {
     const user = new User(req.body);

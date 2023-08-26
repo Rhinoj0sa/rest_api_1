@@ -8,5 +8,7 @@ module.exports = function () {
     router.post('/messages', messageController.newMessage);
     router.post('/user', userController.newUser);
     router.post('/user/seed', userController.seed);
+    router.get('/messages', messageController.getMessages);
+    router.get('/notifications', messageController.getNotifications);
     return router;
 }

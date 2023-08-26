@@ -3,6 +3,25 @@ const User = require('../models/User');
 const Notification = require('../models/Notification');
 const MsgCategories = require('../models/MsgCategories');
 
+exports.getMessages = async (req, res) => {
+    const messages = await Message.find({});
+    if (messages.length === 0) {
+        res.status(404).json({ text: 'No messages found' });
+    }
+    else {
+        res.status(200).json({ text: 'Messages found', messages });
+    }
+}
+exports.getNotifications = async (req, res) => {
+    const notifications = await Notification.find({});
+    if (notifications.length === 0) {
+        res.status(404).json({ text: 'No notifications found' });
+    }
+    else {
+        res.status(200).json({  notifications });
+    }
+}
+
 exports.newMessage = async (req, res) => {
     const valid_categories = ['Sports', 'Finance', 'Films'];
     if (valid_categories.indexOf(req.body.category) < 0) {
