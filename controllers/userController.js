@@ -45,7 +45,7 @@ exports.seed = async (req, res) => {
 
 const user_list = [
     {
-        "name": "johnny Canales",
+        "name": "Johnny Bravo",
         "email": "john@abc.com",
         "phone": "1234567890",
         "suscribed": ["Sports", "Finance"],
@@ -55,8 +55,8 @@ const user_list = [
         "name": "Miguel Gonzalez",
         "email": "miguel@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance"],
-        "channels": ["SMS", "Email"]
+        "suscribed": ["Films"],
+        "channels": ["Email"]
     },
     {
         "name": "Arturo Perez",
@@ -70,7 +70,7 @@ const user_list = [
         "email": "ricardo@abc.com",
         "phone": "1234567890",
         "suscribed": ["Sports", "Finance", "Films"],
-        "channels": ["SMS", "Email"]
+        "channels": ["Email"]
     },
     {
         "name": "Julio Martinez",

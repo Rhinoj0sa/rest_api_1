@@ -11,6 +11,6 @@ module.exports = function () {
     router.get('/notifications', notificationController.getNotifications);
     router.post('/user', userController.newUser);
     router.post('/user/seed', userController.seed);
-    
+
     return router;
 }
