@@ -6,6 +6,10 @@ To start the project run the following command after cloning the repository:
 
 docker-compose up --build
 
+it is necessary to have docker and docker-compose installed in the machine.
+it is necessary to have the port 3000 available in the machine.
+also need to rename the .env.example file to .env
+
 ## The endpoints are:
 http://localhost:3000/message (POST) this endpoint receives a message and process it to send the notifications that are needed.
 The notifications are keep in the notifications table in the database.

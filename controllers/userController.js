@@ -48,50 +48,50 @@ const user_list = [
         "name": "Johnny Bravo",
         "email": "john@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance"],
+        "subscribed": ["Sports"],
         "channels": ["SMS"]
     },
     {
         "name": "Miguel Gonzalez",
         "email": "miguel@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Films"],
+        "subscribed": ["Films"],
         "channels": ["Email"]
     },
     {
         "name": "Arturo Perez",
         "email": "arturog@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance"],
-        "channels": ["SMS", "Email"]
+        "subscribed": ["Sports", "Finance"],
+        "channels": ["Push"]
     },
     {
         "name": "Ricardo Perez",
         "email": "ricardo@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance", "Films"],
+        "subscribed": ["Films"],
         "channels": ["Email"]
     },
     {
         "name": "Julio Martinez",
         "email": "julio@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance", "Films"],
-        "channels": ["SMS", "Email"]
+        "subscribed": ["Sports", "Finance", "Films"],
+        "channels": ["Push"]
     },
     {
         "name": "Brian Wilson",
         "email": "brian@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance", "Films"],
-        "channels": ["SMS", "Email"]
+        "subscribed": ["Sports", "Finance", "Films"],
+        "channels": ["SMS",]
     },
     {
         "name": "John Smith",
         "email": "johnny@abc.com",
         "phone": "1234567890",
-        "suscribed": ["Sports", "Finance", "Films"],
-        "channels": ["SMS", "Email"]
+        "subscribed": ["Sports", "Finance", "Films"],
+        "channels": ["SMS", "Push",'Email']
     }
 
 ]

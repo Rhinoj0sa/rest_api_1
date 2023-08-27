@@ -36,7 +36,7 @@ exports.newMessage = async (req, res) => {
             } catch (error) {
                 console.log(error);
             }
-            const list_users = await User.find({'suscribed': {'$in': [req.body.category]}})
+            const list_users = await User.find({'subscribed': {'$in': [req.body.category]}})
             for (let i = 0; i < list_users.length; i++) {
                 for (let j = 0; j < list_users[i].channels.length; j++) {
                     const notification = new Notification({

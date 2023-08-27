@@ -14,7 +14,7 @@ const userSchema = new Schema({
         type: String,
         trim: true
     },
-    suscribed: [],
+    subscribed: [],
     channels: []
 });
 module.exports = mongoose.model('User', userSchema); 

@@ -10,7 +10,7 @@ describe("POST " + endpointUrl, () => {
                 name: "Juan Gonzalez",
                 email: "juan@dom.com",
                 phone: "1234567890",
-                suscribed: ["Sports"],
+                subscribed: ["Sports"],
                 channels: ["SMS"]
             });
            
